@@ -4,7 +4,7 @@ class Character():
         self.description = char_description
 
     def talk_to(self):
-        print(self.name  )
+        print(self.name)
 
     def describe(self):
         print(self.name + " is here " )
@@ -12,8 +12,6 @@ class Character():
 
     def set_conversation(self, conversation):
         self.conversation = conversation
-
-
     
     def talk(self):
         if self.conversation is not None:
@@ -37,6 +35,9 @@ class Ememy(Character):
          self.weakness = item_weakness
     def get_weakness(self):
          return self.weakness
+    def set_combat_item(self, combat_item):
+         self.combat_item = combat_item
+    
     
     #def conversaton(self):
         #print(self.my_conversation)

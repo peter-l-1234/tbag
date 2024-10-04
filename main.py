@@ -28,6 +28,7 @@ dave.set_weakness('cheese')
 kate = Ememy('kate', 'a witch')
 kate.set_conversation('I will cast  spell on you')
 kate.set_weakness('garlic')
+kate.set_combat_item('garlic')
 
 kitchen.set_character(kate)
 #dining_hall.set_character(dave)
@@ -40,21 +41,33 @@ while True:
       
       if inhabitant is not None:
           inhabitant.describe()
-          print (f'do you want to speak to {inhabitant}? ')
+          print (f'do you want to speak to {inhabitant.name}? ')
           #talk.talk_to()
           #print ('enter y or n')
           reponse = input('enter y or n > ')
           if reponse == 'y':
             print("What do you want to say? >")
             talk = input('>')  # Trigger conversation with the character
-            print(f'{inhabitant} says I will put a spell on you') #text from kate
-
-          else:
+            inhabitant.talk()
+            #print(f'{inhabitant} says I will put a spell on you') #text from kate
+          elif reponse == 'n':
             print("You chose not to speak.")
-
-
-
-          #need to define self.conversation so th euser input is stored
+            
+      if inhabitant is not None:
+          print (f'do you want fight {inhabitant.name}? ')
+          reponse = input('enter y or n > ')
+          if reponse == 'y':
+             combat_item = input('what will you fight with?>')
+             if inhabitant.fight(combat_item):
+                current_room.set_character(None)
+                print(f'{inhabitant.name} has been defeated.')
+             else:
+                print('Game over! You lost the fight.')
+                break
+            #inhabitant.fight()
+          elif reponse == 'n':
+            print("You chose not to fight.")
+    
 
 
       #command = input('>')
