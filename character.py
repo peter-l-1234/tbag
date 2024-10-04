@@ -29,7 +29,6 @@ class Ememy(Character):
         super().__init__(char_name, char_description)
         self.weakness = None
         self.conversation = None
-        #self.my_conversation = input ('>')
 
     def set_weakness(self, item_weakness):
          self.weakness = item_weakness
@@ -39,8 +38,6 @@ class Ememy(Character):
          self.combat_item = combat_item
     
     
-    #def conversaton(self):
-        #print(self.my_conversation)
 
             
     def fight(self, combat_item):
