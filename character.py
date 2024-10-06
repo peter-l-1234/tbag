@@ -21,7 +21,7 @@ class Character():
 
     def fight(self, combat_item):
         self.item = combat_item
-        print(self.name +"does not want ot fight with you")
+        print(self.name +"does not want to fight with you")
         return True
     
 class Ememy(Character):
@@ -45,7 +45,7 @@ class Ememy(Character):
             print(f'you fend {self.name} off with {combat_item}')
             return True
         else:
-            print(f'{self.name} crushes yuo puny adventrurer')
+            print(f'{self.name} crushes you puny adventrurer')
             return False
         
     

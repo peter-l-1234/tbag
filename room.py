@@ -4,10 +4,8 @@ class Room():
         self.description = None
         self.linked_rooms = {}
         self.character = None
-        #self.words = 
 
         #none is its own data type and the value is none
-    
 
     def get_description(self):
         return self.description
@@ -44,7 +42,5 @@ class Room():
         if direction in self.linked_rooms:
             return self.linked_rooms[direction]
         else:
-            print('you cant go that way')
+            print('\n you cant go that way')
             return self
-
-    #def talk(self, words):
